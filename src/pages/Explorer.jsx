@@ -2,9 +2,10 @@ import { useState } from 'react';
 import useRandomCardFetch from '../utils/randomCardFetch.jsx';
 import CardGrid from '../components/cardGrid.jsx';
 import Modal from '../components/modal.jsx';
+import CardCarousel from '../components/cardCarousel.jsx';
 import GridButtons from '../components/cardGridButtons.jsx';
-import CardDataContext from '../utils/contexts.jsx';
 
+import CardDataContext from '../utils/contexts.jsx';
 import './styles/explorer.css';
 
 //mocking resources
@@ -32,6 +33,8 @@ function Explorer () {
         <CardGrid onSelectedCard={handleModalData}/>
         {modalState && (<Modal selectedCard={selectedCard} onClose={closeModal} />)}
         <GridButtons onClick={handleCardCountChange} />
+        <CardCarousel onSelectedCard={handleModalData}/>
+        {modalState && (<Modal selectedCard={selectedCard} onClose={closeModal} />)}
       </CardDataContext.Provider>
     </>
   )

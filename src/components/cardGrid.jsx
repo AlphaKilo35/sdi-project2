@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import {useContext} from 'react';
+
 import CardDataContext  from '../utils/contexts.jsx';
 
 import './styles/card-grid.css'
@@ -7,6 +8,7 @@ import './styles/card-grid.css'
 const CardGrid = ( {onSelectedCard} ) => {
   let cardList = useContext(CardDataContext);
   return (
+    <>
     <div className ="card-grid">
       <ul className="card-list">
         {cardList.map((card, index) => (
@@ -16,6 +18,7 @@ const CardGrid = ( {onSelectedCard} ) => {
         ))}
       </ul>
     </div>
+    </>
   )
 }
 
